@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://mysql-nathand59.alwaysdata.net/nathand59_library
+    password: fj4DT9K99tbYd7
+    username: nathand59_lib
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+
