@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController // REST (consommation et production de JSON)
-@RequestMapping("api/movie")
+@RequestMapping(ApiRegistration.API_REST + ApiRegistration.API_MOVIE)
 public class MovieController {
 
     @Autowired
@@ -26,7 +26,20 @@ public class MovieController {
     }
 
     @DeleteMapping("/{id}")
-    void deleteMovieById(@PathVariable("id") Long toto){
-        movieService.deleteMovieById(toto);
+    void deleteMovieById(@PathVariable("id") Long id){
+        movieService.deleteMovieById(id);
     }
+
+    @PutMapping("/{id}")
+    void updateMovieById(@RequestBody Movie newMovie, @PathVariable("id") Long id){
+        movieService.updateMovieById(newMovie, id);
+    }
+
+    @PostMapping(ApiRegistration.API_MOVIE_LIST)
+    void createAllMovies(@RequestBody List<Movie> movies){
+        movieService.createAllMovies(movies);
+    }
+
+
+
 }

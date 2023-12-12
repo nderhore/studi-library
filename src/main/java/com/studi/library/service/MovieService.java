@@ -17,4 +17,5 @@ public interface MovieService {
     void createMovie(Movie movie);
 
 
+    void createAllMovies(List<Movie> movies);
 }
