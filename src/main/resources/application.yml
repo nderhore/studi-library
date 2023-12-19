@@ -7,5 +7,8 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
-
+library:
+  security:
+    secret: my=32=character=ultra=secure=and=ultra=long=secret
+    expiration: 600000 #un token est valable 10 minutes
 
